@@ -7,7 +7,7 @@ const Profil = ({ host }) => {
     return (
         <div className="profil">
             <p className="profil_name">{host.name}</p>
-            <img className="round_img" src={host.picture} alt="Photo de profil" />
+            <img className="round_img" src={host.picture} alt="profil" />
         </div>
     )
 }

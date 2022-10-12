@@ -28,7 +28,7 @@ const Logement = () => {
 
 
 
-    }, [])
+    }, [id])
 
 
     const displayEquipments = (equipments) => {
