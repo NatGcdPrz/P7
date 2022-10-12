@@ -1,7 +1,10 @@
 import "./Header.css"
 import { Link } from "react-router-dom";
 import Logo from "../../assets/img/kasa.png"
+import { useLocation } from 'react-router-dom';
+
 const Header = () => {
+    const location = useLocation();
 
     return (
         <header className="header">
@@ -10,12 +13,12 @@ const Header = () => {
             </div>
             <nav className="nav">
                 <ul className="menu">
-                    <li className="menu_item">
+                    <li className={`menu_item ${location.pathname === "/" && 'active'}`}>
                         <Link to="/">
                             Accueil
                         </Link>
                     </li>
-                    <li className="menu_item">
+                    <li className={`menu_item ${location.pathname === "/about" && 'active'}`}>
                         <Link to="/about">
                             A propos
                         </Link>
