@@ -1,0 +1,36 @@
+.reservations_container {
+    background-color: var(--secondary-bg-color);
+    margin-top: 30px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: var(--space-card);
+    grid-row-gap: var(--space-card);
+    padding: var(--space-card);
+    width: 100%;
+}
+
+
+@media screen and (max-width: 900px) {
+    .reservations_container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .reservations_container {
+
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+        background-color: white;
+
+    }
+
+    a {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,43 @@
+.container_404 {
+    color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60vh;
+    padding-bottom: 50px;
+    padding-top: 100px;
+}
+
+.title_404 {
+    font-size: 200px;
+    margin: 0%;
+}
+
+.subtitle_404 {
+    font-size: 30px;
+    margin-bottom: 80px;
+    font-weight: 500;
+}
+
+.link_404 {
+    text-decoration: underline;
+    margin: 100px;
+}
+
+@media screen and (max-width: 600px) {
+    .title_404 {
+        font-size: 120px;
+
+    }
+
+    .subtitle_404 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .link_404 {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}

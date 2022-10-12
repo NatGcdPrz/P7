@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.logo {
+    height: 70px;
+    padding-left: 20px;
+}
+
+.menu {
+    color: var(--main-bg-color);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_item {
+    padding: 20px;
+    font-size: 20px;
+}
+
+@media screen and (max-width:600px) {
+    .logo {
+        height: 40px;
+        padding: 0;
+    }
+
+    .menu_item {
+        text-transform: uppercase;
+    }
+}

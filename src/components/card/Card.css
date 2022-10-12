@@ -1,0 +1,30 @@
+.thumbnail {
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    cursor: pointer;
+    transition: all .3s;
+    aspect-ratio: 1;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail__title {
+    color: white;
+    margin-left: 10px;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .thumbnail {
+
+        height: 270px;
+
+
+    }
+}

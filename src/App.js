@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Accueil from "./pages/accueil/accueil";
+import "./main.css";
+import {
+  createBrowserRouter,
+  RouterProvider
+} from "react-router-dom"
+import Logement from "./pages/logement/logement";
+import Page404 from "./pages/error/Page404"
+import About from "./pages/about/about";
+/**
+ * 
+ * @Props 
+ * Permet de faire passer des paramètres entre les composants (uniquement du parent vers l'enfant)
+ */
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Accueil />
+  },
+  {
+    path: "/about",
+    element: <About />
+  },
+  {
+    path: "/logement/:id",
+    element: <Logement />
+  },
+  {
+    path: "*",
+    element: <Page404 />
+  }
+]);
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
