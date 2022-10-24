@@ -18,9 +18,14 @@ const Carrousel = ({ pictures }) => {
         )
     }
 
+    const shouldShow = () => {
+        return pictures.length > 1
+    }
+
     return (
         <div className="slideshow">
-            <img className="arrowLeft" src={Left} alt="flèche gauche" onClick={() => previousImage()} />
+            {shouldShow() &&
+                <img className="arrowLeft" src={Left} alt="flèche gauche" onClick={() => previousImage()} />}
             <div
                 className="slideshowSlider"
                 style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
@@ -35,18 +40,21 @@ const Carrousel = ({ pictures }) => {
                 ))}
 
             </div>
-            <img className="arrowRight" src={Right} alt="flèche droite" onClick={() => nextImage()} />
-            <div className="slideshowDots">
-                {pictures.map((_, idx) => (
-                    <div
-                        key={idx}
-                        className={`slideshowDot${index === idx ? " active" : ""}`}
-                        onClick={() => {
-                            setIndex(idx);
-                        }}
-                    ></div>
-                ))}
-            </div>
+            {shouldShow() &&
+                <>
+                    <img className="arrowRight" src={Right} alt="flèche droite" onClick={() => nextImage()} />
+                    <div className="slideshowDots">
+                        {pictures.map((_, idx) => (
+                            <div
+                                key={idx}
+                                className={`slideshowDot${index === idx ? " active" : ""}`}
+                                onClick={() => {
+                                    setIndex(idx);
+                                }}
+                            ></div>
+                        ))}
+                    </div>
+                </>}
         </div>
     )
 }

@@ -9,25 +9,26 @@ import Profil from "../../components/profil/Profil";
 import Stars from "../../components/stars/Stars";
 import Carrousel from "../../components/caroussel/Caroussel";
 import MainLayout from "../../components/layout/MainLayout";
+import { useNavigate } from "react-router-dom";
 
 const Logement = () => {
-    const [reservation, setReservation] = React.useState({});
-    const [isLoading, setIsLoading] = React.useState(true);
+
+    const navigate = useNavigate();
+
+    const [reservation, setReservation] = React.useState(false);
 
     let { id } = useParams();
 
     React.useEffect(() => {
 
-
-        Data.forEach(res => {
-            if (res.id === id) {
-                setReservation(res);
-                setIsLoading(false);
-            }
-        });
-
-
-
+        const logement = Data.find(res => res.id === id);
+        console.log(logement);
+        if (logement) {
+            setReservation(logement);
+        }
+        else {
+            navigate('/404');
+        }
     }, [id])
 
 
@@ -65,8 +66,12 @@ const Logement = () => {
 
     }
 
+    if (!reservation) {
+        return (
+            <h1>Chargement...</h1>
+        )
+    }
 
-    if (isLoading) return (<h3>Chargement...</h3>)
     return (
         <MainLayout>
 

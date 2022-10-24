@@ -8,11 +8,11 @@
 
 .main_container {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1240px;
     min-height: calc(100vh - 200px);
 }
 
-@media screen and (max-width:1440px) {
+@media screen and (max-width:1240px) {
     .main_container {
         padding: 0 20px;
     }
