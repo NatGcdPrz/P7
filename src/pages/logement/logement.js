@@ -20,28 +20,30 @@ const Logement = () => {
 
     const [reservation, setReservation] = useState(false);
 
+    const [error, setError] = useState(false);
+
     let { id } = useParams();
 
     useEffect(() => {
 
-        const GetOneLogement = () => {
-            // Appel du service logement , appel de la fonction qui retourne 1 seul logement en lui transmettant id
-            LogementService.GetOneLogement(id)
-                .then((data) => {
-                    if (data) {
-                        setReservation(data);
-                    } else {
-                        navigate('/404');
-                    }
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
 
-        }
-        GetOneLogement();
-
+        // Appel du service logement , appel de la fonction qui retourne 1 seul logement en lui transmettant id
+        LogementService.GetOneLogement(id)
+            .then((data) => {
+                if (data) {
+                    setReservation(data);
+                } else {
+                    setError(true);
+                }
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }, [id])
+
+    if (error) {
+        navigate('/404');
+    }
 
 
 
