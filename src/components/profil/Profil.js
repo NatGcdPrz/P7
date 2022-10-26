@@ -1,4 +1,4 @@
-import "./Profil.css"
+import "@/components/profil/Profil.css";
 
 const Profil = ({ host }) => {
 

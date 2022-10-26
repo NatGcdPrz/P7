@@ -1,11 +1,11 @@
 import React from "react";
-import "./Card.css"
 import { useNavigate } from "react-router-dom";
+
+import "@/components/card/Card.css"
 
 const Card = ({ image, title, id }) => {
 
     const navigate = useNavigate();
-
 
     return (
         <article

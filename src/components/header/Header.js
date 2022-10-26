@@ -1,7 +1,9 @@
-import "./Header.css"
-import { Link } from "react-router-dom";
-import Logo from "../../assets/img/kasa.png"
 import { useLocation } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+import "@/components/header/Header.css";
+
+import Logo from "@/assets/img/kasa.png";
 
 const Header = () => {
     const location = useLocation();

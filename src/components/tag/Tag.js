@@ -1,4 +1,4 @@
-import "./Tag.css";
+import "@/components/tag/Tag.css";
 
 const Tag = ({ tag }) => {
 

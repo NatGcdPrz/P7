@@ -1,7 +1,6 @@
-import "./Title.css"
+import "@/components/title/Title.css";
 
 const Title = ({ title, location }) => {
-
 
     return (
         <article className="title_container">

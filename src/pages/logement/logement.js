@@ -1,35 +1,48 @@
-import React from "react";
-import "./logement.css";
-import Accordeon from "../../components/accordeon/Accordeon";
-import Title from "../../components/title/Title";
+import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import Data from "../../data/logements.json";
-import Tag from "../../components/tag/Tag";
-import Profil from "../../components/profil/Profil";
-import Stars from "../../components/stars/Stars";
-import Carrousel from "../../components/caroussel/Caroussel";
-import MainLayout from "../../components/layout/MainLayout";
 import { useNavigate } from "react-router-dom";
+
+import "@/pages/logement/logement.css";
+
+import Accordeon from "@/components/accordeon/Accordeon";
+import Title from "@/components/title/Title";
+import Tag from "@/components/tag/Tag";
+import Profil from "@/components/profil/Profil";
+import Stars from "@/components/stars/Stars";
+import Carrousel from "@/components/caroussel/Caroussel";
+import MainLayout from "@/components/layout/MainLayout";
+
+import LogementService from "@/_services/Logement.service.js";
 
 const Logement = () => {
 
     const navigate = useNavigate();
 
-    const [reservation, setReservation] = React.useState(false);
+    const [reservation, setReservation] = useState(false);
 
     let { id } = useParams();
 
-    React.useEffect(() => {
+    useEffect(() => {
 
-        const logement = Data.find(res => res.id === id);
-        console.log(logement);
-        if (logement) {
-            setReservation(logement);
+        const GetOneLogement = () => {
+            // Appel du service logement , appel de la fonction qui retourne 1 seul logement en lui transmettant id
+            LogementService.GetOneLogement(id)
+                .then((data) => {
+                    if (data) {
+                        setReservation(data);
+                    } else {
+                        navigate('/404');
+                    }
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+
         }
-        else {
-            navigate('/404');
-        }
+        GetOneLogement();
+
     }, [id])
+
 
 
     const displayEquipments = (equipments) => {

@@ -1,9 +1,11 @@
-import "./about.css";
 import React from "react";
-import MainLayout from "../../components/layout/MainLayout";
-import Accordeon from "../../components/accordeon/Accordeon";
-import Banner from "../../components/banner/Banner";
-import bgBanner from "../../assets/img/banner-about.png";
+
+import "@/pages/about/about.css";
+
+import MainLayout from "@/components/layout/MainLayout";
+import Accordeon from "@/components/accordeon/Accordeon";
+import Banner from "@/components/banner/Banner";
+import bgBanner from "@/assets/img/banner-about.png";
 
 const About = () => {
 

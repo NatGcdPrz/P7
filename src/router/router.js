@@ -1,9 +1,9 @@
-import Accueil from "../pages/accueil/accueil";
+import Accueil from "@/pages/accueil/accueil";
 
 
-import Logement from "../pages/logement/logement";
-import Page404 from "../pages/error/Page404"
-import About from "../pages/about/about";
+import Logement from "@/pages/logement/logement";
+import Page404 from "@/pages/error/Page404"
+import About from "@/pages/about/about";
 
 import {
     createBrowserRouter,

@@ -1,5 +1,4 @@
-import "./Banner.css"
-
+import "@/components/banner/Banner.css";
 
 const Banner = ({ img_banner, title, large }) => {
 

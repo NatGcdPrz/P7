@@ -1,10 +1,12 @@
-import React from "react";
-import "./Caroussel.css"
-import Right from "../../assets/img/right.png";
-import Left from "../../assets/img/left.png";
+import React, { useState } from 'react';
+
+import "@/components/caroussel/Caroussel.css"
+
+import Right from "@/assets/img/right.png";
+import Left from "@/assets/img/left.png";
 
 const Carrousel = ({ pictures }) => {
-    const [index, setIndex] = React.useState(0);
+    const [index, setIndex] = useState(0);
 
     const nextImage = () => {
         setIndex((prevIndex) =>

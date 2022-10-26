@@ -1,5 +1,6 @@
-import "./Footer.css"
-import Logo from "../../assets/img/kaza-blanc.png"
+import "@/components/footer/Footer.css";
+
+import Logo from "@/assets/img/kaza-blanc.png";
 
 const Footer = () => {
 

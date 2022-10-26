@@ -1,9 +1,11 @@
 import React from "react";
-import "./Pages404.css";
-import MainLayout from "../../components/layout/MainLayout";
 import { Link } from "react-router-dom";
-const Page404 = () => {
 
+import "@/pages/error/Pages404.css";
+
+import MainLayout from "@/components/layout/MainLayout";
+
+const Page404 = () => {
 
     return (
         <MainLayout>

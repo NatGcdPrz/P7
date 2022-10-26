@@ -1,6 +1,7 @@
-import "./Stars.css"
-import GrayStar from "../../assets/img/white-star.png"
-import OrangeStar from "../../assets/img/orange-star.png"
+import "@/components/stars/Stars.css";
+
+import GrayStar from "@/assets/img/white-star.png";
+import OrangeStar from "@/assets/img/orange-star.png";
 
 const Stars = ({ rating }) => {
     //Le nombre d'étoile rouge qu'on veut

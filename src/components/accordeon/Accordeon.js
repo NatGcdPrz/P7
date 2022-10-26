@@ -1,18 +1,16 @@
-import React from "react";
-import "./Accordeon.css"
-import ArrowHaut from "../../assets/img/haut.png";
-import ArrowBas from "../../assets/img/bas.png";
+import React, { useState } from 'react';
 
+import "@/components/accordeon/Accordeon.css";
 
+import ArrowHaut from "@/assets/img/haut.png";
+import ArrowBas from "@/assets/img/bas.png";
 
 const Accordeon = ({ title, children }) => {
-    const [open, setOpen] = React.useState(false);
-
+    const [open, setOpen] = useState(false);
 
     const handleAccordeon = () => {
         setOpen(!open);
     }
-
 
     return (
         <div className="accordeon">
