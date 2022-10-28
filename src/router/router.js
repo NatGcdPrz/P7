@@ -10,6 +10,8 @@ import {
     RouterProvider
 } from "react-router-dom"
 
+
+// Création d'un router 
 const router = createBrowserRouter([
     {
         path: "/",
@@ -30,8 +32,8 @@ const router = createBrowserRouter([
 ]);
 
 
+// Rendu du router provider (permet de mettre le router à disposition de notre application)
 const Router = () => {
-
     return (
         <RouterProvider router={router} />
     );

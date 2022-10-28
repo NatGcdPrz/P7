@@ -45,16 +45,9 @@ const Carrousel = ({ pictures }) => {
             {shouldShow() &&
                 <>
                     <img className="arrowRight" src={Right} alt="flèche droite" onClick={() => nextImage()} />
-                    <div className="slideshowDots">
-                        {pictures.map((_, idx) => (
-                            <div
-                                key={idx}
-                                className={`slideshowDot${index === idx ? " active" : ""}`}
-                                onClick={() => {
-                                    setIndex(idx);
-                                }}
-                            ></div>
-                        ))}
+                    <div className="slideshowNumbers">
+                        {`${index + 1} / ${pictures.length}`}
+
                     </div>
                 </>}
         </div>

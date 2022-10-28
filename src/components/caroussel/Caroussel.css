@@ -19,25 +19,13 @@
 }
 
 /* Buttons */
-
-.slideshowDots {
+.slideshowNumbers {
+    color: white;
     text-align: center;
-}
-
-.slideshowDot {
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-
-    cursor: pointer;
-    margin: 15px 7px 0px;
-
-    background-color: #c4c4c4;
-}
-
-.slideshowDot.active {
-    background-color: var(--main-bg-color);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .arrowLeft {
@@ -69,11 +57,6 @@
     .arrowRight {
         width: 15px;
         top: 47%;
-    }
-
-    .slideshowDot {
-        height: 10px;
-        width: 10px;
     }
 
 }
